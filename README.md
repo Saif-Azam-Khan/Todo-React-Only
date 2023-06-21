@@ -14,57 +14,55 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+This is the main App component of a Todo List application built using React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main component imports and their uses are as follows:
 
-### `npm run build`
+A CSS file that styles the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The TodoList:
+This is a React component that displays a list of todos passed as props and allows the user to edit and mark them as done. It also uses a context to display a greeting message using the name entered by the user in the parent component.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The component imports required hooks and components, including Stack, Divider, NameContext (imported from the parent component), TaskAltIcon, BorderColorIcon, Card, TextField.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+useState
+hook is used to keep track of the currently displayed todos and the new task being added.
+useEffect
+hook is used to update the displayed todos whenever the prop todos is updated.
+useContext
+hook is used to access the name entered by the user in the parent component.
+The component defines three functions:
+handleDone
+: This function updates the status of the clicked task to done.
+handleEdit
+: This function enables editing mode of a task by setting its edit property to true.
+handleBlur
+: This function saves the edited task on blur of input field.
 
-### `npm run eject`
+The component renders each todo as a Card with text and icons for done and edit modes. If the todo is in edit mode, it displays an input field instead of plain text.
+A greeting message is displayed at the top of the list using the user's name obtained through the useContext hook.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The todos array:
+imported from a separate file, which contains some initial todo items.
+In the render method, the component returns a div containing two child components:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The TodoForm component:
+This is a React component that displays a list of todos passed as props and allows the user to edit and mark them as done. It also uses a context to display a greeting message using the name entered by the user in the parent component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The component imports required hooks and components, including Stack, Divider, NameContext (imported from the parent component), TaskAltIcon, BorderColorIcon, Card, TextField.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+useState
+hook is used to keep track of the currently displayed todos and the new task being added.
+useEffect
+hook is used to update the displayed todos whenever the prop todos is updated.
+useContext
+hook is used to access the name entered by the user in the parent component.
+The component defines three functions:
+handleDone
+: This function updates the status of the clicked task to done.
+handleEdit
+: This function enables editing mode of a task by setting its edit property to true.
+handleBlur
+: This function saves the edited task on blur of input field.
+The component renders each todo as a Card with text and icons for done and edit modes. If the todo is in edit mode, it displays an input field instead of plain text.
+A greeting message is displayed at the top of the list using the user's name obtained through the useContext hook.
